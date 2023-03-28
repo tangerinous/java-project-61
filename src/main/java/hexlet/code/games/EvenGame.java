@@ -9,7 +9,6 @@ import static java.lang.System.out;
 
 public class EvenGame {
     public static void start(Scanner scanner, String name) {
-        int correctAnswers = 0;
         Engine engine = new Engine(scanner, 3, name);
 
         while (engine.shouldContinue()) {

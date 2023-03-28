@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
 
 import java.util.Random;
@@ -15,6 +16,7 @@ public class App {
             out.println("""
                     1 - Greet
                     2 - Even
+                    3 - Calc
                     0 - Exit""");
 
             out.print("Your choice: ");
@@ -30,12 +32,13 @@ public class App {
             out.println("Hello, " + name);
 
             switch (choice) {
-                case "2": {
+                case "2" -> {
                     EvenGame.start(scanner, name);
-                    break;
                 }
-                default:
-                    exit(1);
+                case "3" -> {
+                    CalcGame.start(scanner, name);
+                }
+                default -> exit(1);
             }
 
             out.println("Goodbye");
