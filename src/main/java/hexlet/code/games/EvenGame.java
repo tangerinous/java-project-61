@@ -12,7 +12,7 @@ public class EvenGame {
         int correctAnswers = 0;
         Engine engine = new Engine(scanner, 3, name);
 
-        while (correctAnswers < 3) {
+        while (engine.shouldContinue()) {
             out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             Random random = new Random();
             int num = random.nextInt(100);
@@ -20,23 +20,8 @@ public class EvenGame {
             String answer = engine.askQuestion(num);
 
             boolean isEven = (num % 2) == 0;
-            switch (answer) {
-                case "yes" -> {
-                    if (isEven) {
-                        engine.correctAnswer();
-                    } else {
-                        engine.notCorrectAnswer(answer, "no");
-                    }
-                }
-                case "no" -> {
-                    if (isEven) {
-                        engine.notCorrectAnswer(answer, "yes");
-                    } else {
-                        engine.correctAnswer();
-                    }
-                }
-                default -> out.println("Answers may be only 'yes' or 'not'");
-            }
+
+            engine.checkAnswer(answer, isEven ? "yes" : "no");
         }
     }
 }
