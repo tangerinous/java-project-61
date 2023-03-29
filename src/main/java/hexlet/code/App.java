@@ -35,18 +35,10 @@ public class App {
             out.println("Hello, " + name);
 
             switch (choice) {
-                case "2" -> {
-                    EvenGame.start(scanner, name);
-                }
-                case "3" -> {
-                    CalcGame.start(scanner, name);
-                }
-                case "4" -> {
-                    GcdGame.start(scanner, name);
-                }
-                case "5" -> {
-                    ProgressionGame.start(scanner, name);
-                }
+                case "2" -> EvenGame.start(scanner, name);
+                case "3" -> CalcGame.start(scanner, name);
+                case "4" -> GcdGame.start(scanner, name);
+                case "5" -> ProgressionGame.start(scanner, name);
                 default -> exit(1);
             }
 

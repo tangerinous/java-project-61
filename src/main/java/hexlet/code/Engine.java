@@ -34,8 +34,8 @@ public class Engine {
     }
 
     public void notCorrectAnswer(String answer, String correct) {
-        out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n" +
-                "Let's try again, %s! \n", answer, correct, name);
+        out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n"
+                + "Let's try again, %s! \n", answer, correct, name);
     }
 
     public void checkAnswer(String answer, String correctAnswer) {
