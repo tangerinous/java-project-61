@@ -18,8 +18,8 @@ public class ProgressionGame {
     public static void start(Scanner scanner, String name) {
         Engine engine = new Engine(scanner, MAX_CORRECT_ANSWERS, name);
 
+        out.println("What number is missing in the progression?");
         while (engine.shouldContinue()) {
-            out.println("What number is missing in the progression?");
             Random random = new Random();
             int start = random.nextInt(BOUND_START);
             int step = random.nextInt(BOUND_STEP);

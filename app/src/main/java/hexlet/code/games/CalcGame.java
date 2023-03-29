@@ -17,8 +17,8 @@ public class CalcGame {
         Engine engine = new Engine(scanner, MAX_CORRECT_ANSWERS, name);
         String[] ops = {"+", "-", "*"};
 
+        out.println("What is the result of the expression?");
         while (engine.shouldContinue()) {
-            out.println("What is the result of the expression?");
             Random random = new Random();
             int operation = random.nextInt(ops.length);
 
