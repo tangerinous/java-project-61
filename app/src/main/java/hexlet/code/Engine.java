@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Objects;
 import java.util.Scanner;
 
+import static java.lang.System.exit;
 import static java.lang.System.out;
 
 public class Engine {
@@ -39,6 +40,7 @@ public class Engine {
                 '%s' is wrong answer ;(. Correct answer was '%s'.
                 Let's try again, %s!
                 """, answer, correct, name);
+        exit(1);
     }
 
     public void checkAnswer(String answer, String correctAnswer) {
