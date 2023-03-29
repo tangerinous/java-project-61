@@ -44,6 +44,5 @@ public class Engine {
         } else {
             notCorrectAnswer(answer, correctAnswer);
         }
-
     }
 }
