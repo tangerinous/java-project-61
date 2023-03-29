@@ -13,19 +13,20 @@ public class Engine {
 
     private final String name;
 
+
     /**
-     * @param scanner
-     * @param maxCorrectAnswers
-     * @param name
+     * @param s
+     * @param mca
+     * @param nm
      */
-    public Engine(Scanner scanner, int maxCorrectAnswers, String name) {
-        this.scanner = scanner;
-        this.maxCorrectAnswers = maxCorrectAnswers;
-        this.name = name;
+    public Engine(Scanner s, int mca, String nm) {
+        this.scanner = s;
+        this.maxCorrectAnswers = mca;
+        this.name = nm;
     }
 
     /**
-     * @return
+     * @return bool
      */
     public boolean shouldContinue() {
         return correctAnswers < maxCorrectAnswers;
