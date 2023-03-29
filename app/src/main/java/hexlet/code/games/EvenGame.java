@@ -14,9 +14,8 @@ public class EvenGame {
 
     public static void start(Scanner scanner, String name) {
         Engine engine = new Engine(scanner, MAX_CORRECT_ANSWERS, name);
-
+        out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         while (engine.shouldContinue()) {
-            out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             Random random = new Random();
             int num = random.nextInt(BOUND);
 
