@@ -27,14 +27,15 @@ public class ProgressionGame {
             int hideElemPos = random.nextInt(length);
             int[] arr = new int[length];
 
+            int current = start;
             StringBuilder strB = new StringBuilder();
             for (int i = 0; i < arr.length; i++) {
-                arr[i] = start;
-                start += step;
+                arr[i] = current;
+                current += step;
                 strB.append(i != hideElemPos ? arr[i] : "..").append(" ");
             }
 
-            int i = hideElemPos == 0 ? arr[hideElemPos + 1] - step : arr[hideElemPos - 1];
+            int i = hideElemPos == 0 ? start : arr[hideElemPos - 1];
             int correctAnswer = i + step;
             String answer = engine.askQuestion(strB.toString());
 
