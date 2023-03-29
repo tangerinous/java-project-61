@@ -26,6 +26,7 @@ public class PrimeGame {
 
             engine.checkAnswer(answer, correctAnswer ? "yes" : "no");
         }
+        out.printf("Congratulations, %s!\n", name);
     }
 
     private static boolean isPrime(int num) {

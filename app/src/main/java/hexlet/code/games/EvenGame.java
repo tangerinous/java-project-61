@@ -26,5 +26,6 @@ public class EvenGame {
 
             engine.checkAnswer(answer, isEven ? "yes" : "no");
         }
+        out.printf("Congratulations, %s!\n", name);
     }
 }

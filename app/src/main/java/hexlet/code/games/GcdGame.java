@@ -30,6 +30,7 @@ public class GcdGame {
 
             engine.checkAnswer(answer, String.valueOf(correctAnswer));
         }
+        out.printf("Congratulations, %s!\n", name);
     }
 
     private static int calcNod(int left, int right) {

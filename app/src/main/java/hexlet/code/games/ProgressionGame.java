@@ -39,6 +39,7 @@ public class ProgressionGame {
 
             engine.checkAnswer(answer, String.valueOf(correctAnswer));
         }
+        out.printf("Congratulations, %s!\n", name);
     }
 
 

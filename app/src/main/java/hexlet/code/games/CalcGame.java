@@ -33,6 +33,7 @@ public class CalcGame {
 
             engine.checkAnswer(answer, String.valueOf(correctAnswer));
         }
+        out.printf("Congratulations, %s!\n", name);
     }
 
     private static int calculate(int left, String operation, int right) {
