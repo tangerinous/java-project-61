@@ -14,7 +14,6 @@ public class GcdGame {
         while (engine.shouldContinue()) {
             out.println("Find the greatest common divisor of given numbers.");
             Random random = new Random();
-            int operation = random.nextInt(3);
 
             int left = random.nextInt(100);
             int right = random.nextInt(100);
