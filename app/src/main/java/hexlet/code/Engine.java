@@ -40,7 +40,7 @@ public class Engine {
                 '%s' is wrong answer ;(. Correct answer was '%s'.
                 Let's try again, %s!
                 """, answer, correct, name);
-        exit(1);
+        correctAnswers = Integer.MAX_VALUE;
     }
 
     public void checkAnswer(String answer, String correctAnswer) {
