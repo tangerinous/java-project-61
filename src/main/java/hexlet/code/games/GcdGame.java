@@ -8,15 +8,19 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class GcdGame {
+
+    public static final int BOUND = 100;
+    public static final int MAX_CORRECT_ANSWERS = 3;
+
     public static void start(Scanner scanner, String name) {
-        Engine engine = new Engine(scanner, 3, name);
+        Engine engine = new Engine(scanner, MAX_CORRECT_ANSWERS, name);
 
         while (engine.shouldContinue()) {
             out.println("Find the greatest common divisor of given numbers.");
             Random random = new Random();
 
-            int left = random.nextInt(100);
-            int right = random.nextInt(100);
+            int left = random.nextInt(BOUND);
+            int right = random.nextInt(BOUND);
 
             String question = String.format("%d %d", left, right);
 

@@ -8,17 +8,22 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class CalcGame {
+
+    public static final int BOUND = 100;
+    public static final int ZERO = 0;
+    public static final int MAX_CORRECT_ANSWERS = 3;
+
     public static void start(Scanner scanner, String name) {
-        Engine engine = new Engine(scanner, 3, name);
+        Engine engine = new Engine(scanner, MAX_CORRECT_ANSWERS, name);
         String[] ops = {"+", "-", "*"};
 
         while (engine.shouldContinue()) {
             out.println("What is the result of the expression?");
             Random random = new Random();
-            int operation = random.nextInt(3);
+            int operation = random.nextInt(ops.length);
 
-            int left = random.nextInt(100);
-            int right = random.nextInt(100);
+            int left = random.nextInt(BOUND);
+            int right = random.nextInt(BOUND);
 
             String question = String.format("%d %s %d", left, ops[operation], right);
 
@@ -35,7 +40,7 @@ public class CalcGame {
             case "+" -> left + right;
             case "-" -> left - right;
             case "*" -> left * right;
-            default -> 0;
+            default -> ZERO;
         };
     }
 
