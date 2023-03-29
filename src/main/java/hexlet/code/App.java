@@ -2,8 +2,8 @@ package hexlet.code;
 
 import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
+import hexlet.code.games.GdcGame;
 
-import java.util.Random;
 import java.util.Scanner;
 
 import static java.lang.System.exit;
@@ -17,6 +17,7 @@ public class App {
                     1 - Greet
                     2 - Even
                     3 - Calc
+                    4 - GDC
                     0 - Exit""");
 
             out.print("Your choice: ");
@@ -37,6 +38,9 @@ public class App {
                 }
                 case "3" -> {
                     CalcGame.start(scanner, name);
+                }
+                case "4" -> {
+                    GdcGame.start(scanner, name);
                 }
                 default -> exit(1);
             }
