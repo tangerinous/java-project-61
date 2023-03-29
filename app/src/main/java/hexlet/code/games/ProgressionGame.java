@@ -31,7 +31,7 @@ public class ProgressionGame {
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = start;
                 start += step;
-                strB.append(i != hideElemPos ? arr[i] : "...").append(" ");
+                strB.append(i != hideElemPos ? arr[i] : "..").append(" ");
             }
 
             int correctAnswer = arr[hideElemPos - 1] + step;
