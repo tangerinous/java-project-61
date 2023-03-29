@@ -35,8 +35,7 @@ public class ProgressionGame {
                 strB.append(i != hideElemPos ? arr[i] : "..").append(" ");
             }
 
-            int i = hideElemPos == 0 ? start : arr[hideElemPos - 1];
-            int correctAnswer = i + step;
+            int correctAnswer = hideElemPos == 0 ? start : arr[hideElemPos - 1] + step;
             String answer = engine.askQuestion(strB.toString());
 
             engine.checkAnswer(answer, String.valueOf(correctAnswer));
