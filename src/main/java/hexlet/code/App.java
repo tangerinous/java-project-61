@@ -2,7 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
-import hexlet.code.games.GdcGame;
+import hexlet.code.games.GcdGame;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class App {
                     1 - Greet
                     2 - Even
                     3 - Calc
-                    4 - GDC
+                    4 - GCD
                     0 - Exit""");
 
             out.print("Your choice: ");
@@ -40,7 +40,7 @@ public class App {
                     CalcGame.start(scanner, name);
                 }
                 case "4" -> {
-                    GdcGame.start(scanner, name);
+                    GcdGame.start(scanner, name);
                 }
                 default -> exit(1);
             }

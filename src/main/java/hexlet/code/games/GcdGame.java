@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import static java.lang.System.out;
 
-public class GdcGame {
+public class GcdGame {
     public static void start(Scanner scanner, String name) {
         Engine engine = new Engine(scanner, 3, name);
 
