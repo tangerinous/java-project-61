@@ -25,6 +25,7 @@ public class Engine {
 
     public String askQuestion(Object question) {
         out.println("Question: " + question);
+        out.println("Your answer: ");
         return scanner.next();
     }
 
