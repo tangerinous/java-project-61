@@ -54,7 +54,7 @@ public class App {
 
         String name = scanner.next();
 
-        out.println("Hello, " + name);
+        out.println("Hello, " + name + "!");
         return name;
     }
 }
