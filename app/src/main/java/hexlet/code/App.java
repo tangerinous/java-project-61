@@ -27,14 +27,12 @@ public class App {
             out.print("Your choice: ");
 
             String choice = scanner.next();
+            if ("1".equals(choice)) {
+                greating(scanner);
+                return;
+            }
 
-            out.println("Welcome to the Brain Games!");
-
-            out.println("May I have your name? ");
-
-            String name = scanner.next();
-
-            out.println("Hello, " + name);
+            String name = greating(scanner);
 
             switch (choice) {
                 case "2" -> EvenGame.start(scanner, name);
@@ -47,5 +45,16 @@ public class App {
 
             out.println("Goodbye");
         }
+    }
+
+    private static String greating(Scanner scanner) {
+        out.println("Welcome to the Brain Games!");
+
+        out.println("May I have your name? ");
+
+        String name = scanner.next();
+
+        out.println("Hello, " + name);
+        return name;
     }
 }
