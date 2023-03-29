@@ -34,7 +34,7 @@ public class Engine {
 
     /**
      * @param question
-     * @return
+     * @return string
      */
     public String askQuestion(Object question) {
         out.println("Question: " + question);
