@@ -12,7 +12,7 @@ public class ProgressionGame {
     public static final int BOUND_START = 100;
     public static final int BOUND_STEP = 10;
     public static final int BOUND_ORIGIN = 5;
-    public static final int BOUND_LIMIT = 11;
+    public static final int BOUND_LIMIT = 10;
     public static final int MAX_CORRECT_ANSWERS = 3;
 
     public static void start(Scanner scanner, String name) {
