@@ -7,22 +7,21 @@ import static java.lang.System.out;
 public class CalcGame {
 
     public static final int BOUND = 100;
-    public static final int ZERO = 0;
-    private static final String[] ops = {"+", "-", "*"};
+    private static final String[] OPS = {"+", "-", "*"};
 
     public static String[] generateQuestion() {
         out.println("What is the result of the expression?");
         String[] questionAns = new String[2];
 
         Random random = new Random();
-        int operation = random.nextInt(ops.length);
+        int operation = random.nextInt(OPS.length);
 
         int left = random.nextInt(BOUND);
         int right = random.nextInt(BOUND);
 
-        String question = String.format("%d %s %d", left, ops[operation], right);
+        String question = String.format("%d %s %d", left, OPS[operation], right);
 
-        int correctAnswer = calculate(left, ops[operation], right);
+        int correctAnswer = calculate(left, OPS[operation], right);
 
         questionAns[0] = question;
         questionAns[1] = String.valueOf(correctAnswer);

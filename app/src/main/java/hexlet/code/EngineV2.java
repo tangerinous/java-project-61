@@ -12,6 +12,9 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class EngineV2 {
+
+    public static final int MAX_ATTEMPTS = 3;
+
     public static void startGame(Scanner scanner) {
         int correctAnswers = 0;
 
@@ -23,7 +26,7 @@ public class EngineV2 {
 
         String name = Cli.greeting(scanner);
 
-        while (correctAnswers < 3) {
+        while (correctAnswers < MAX_ATTEMPTS) {
             String[] question = generateQuestion(choice);
 
             String answer = askQuestion(scanner, question[0]);
