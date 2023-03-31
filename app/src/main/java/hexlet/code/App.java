@@ -1,14 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.games.CalcGame;
-import hexlet.code.games.EvenGame;
-import hexlet.code.games.GcdGame;
-import hexlet.code.games.PrimeGame;
-import hexlet.code.games.ProgressionGame;
-
 import java.util.Scanner;
 
-import static java.lang.System.exit;
 import static java.lang.System.out;
 
 public class App {
@@ -26,15 +19,7 @@ public class App {
 
             out.print("Your choice: ");
 
-            String choice = scanner.next();
-            if ("1".equals(choice)) {
-                Cli.greeting(scanner);
-                return;
-            }
-
-            String name = Cli.greeting(scanner);
-
-            Menu.processMenu(scanner, name, choice);
+            EngineV2.startGame(scanner);
 
             out.println("Goodbye");
         }
