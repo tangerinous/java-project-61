@@ -1,30 +1,21 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
 import java.util.Random;
-import java.util.Scanner;
-
-import static java.lang.System.out;
 
 public class EvenGame {
 
     public static final int BOUND = 100;
     public static final int MAX_CORRECT_ANSWERS = 3;
 
-    public static void start(Scanner scanner, String name) {
-        Engine engine = new Engine(scanner, MAX_CORRECT_ANSWERS, name);
-        out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        while (engine.shouldContinue()) {
-            Random random = new Random();
-            int num = random.nextInt(BOUND);
+    public static String[] generateQuestion() {
+        Random random = new Random();
+        String[] questionAns = new String[2];
+        int num = random.nextInt(BOUND);
+        boolean isEven = (num % 2) == 0;
 
-            String answer = engine.askQuestion(num);
-
-            boolean isEven = (num % 2) == 0;
-
-            engine.checkAnswer(answer, isEven ? "yes" : "no");
-        }
-        out.printf("Congratulations, %s!\n", name);
+        questionAns[0] = String.valueOf(num);
+        questionAns[1] = isEven ? "yes" : "no";
+        return questionAns;
     }
+
 }
