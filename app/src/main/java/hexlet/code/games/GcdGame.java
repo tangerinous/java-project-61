@@ -22,6 +22,9 @@ public class GcdGame {
         int max = Integer.max(left, right);
         int min = Integer.min(left, right);
 
+        if(min == 0)
+            return 1;
+
         while (min > 1) {
             int mod = max % min;
             if (mod == 0) {
