@@ -30,8 +30,8 @@ public class PrimeGame {
     }
 
     private static boolean isPrime(int num) {
-        if (num == 1) {
-            return true;
+        if (num <= 1) {
+            return false;
         }
 
         for (int i = 2; i <= num / 2; i++) {

@@ -28,33 +28,16 @@ public class App {
 
             String choice = scanner.next();
             if ("1".equals(choice)) {
-                greating(scanner);
+                Cli.greeting(scanner);
                 return;
             }
 
-            String name = greating(scanner);
+            String name = Cli.greeting(scanner);
 
-            switch (choice) {
-                case "2" -> EvenGame.start(scanner, name);
-                case "3" -> CalcGame.start(scanner, name);
-                case "4" -> GcdGame.start(scanner, name);
-                case "5" -> ProgressionGame.start(scanner, name);
-                case "6" -> PrimeGame.start(scanner, name);
-                default -> exit(1);
-            }
+            Menu.processMenu(scanner, name, choice);
 
             out.println("Goodbye");
         }
     }
 
-    private static String greating(Scanner scanner) {
-        out.println("Welcome to the Brain Games!");
-
-        out.println("May I have your name? ");
-
-        String name = scanner.next();
-
-        out.println("Hello, " + name + "!");
-        return name;
-    }
 }
