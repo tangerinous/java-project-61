@@ -1,2 +1,2 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/tangerinous/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/tangerinous/java-project-61/actions)
+[![hexlet-check](https://github.com/tangerinous/java-project-61/actions/workflows/hexlet-check.yml/badge.svg?branch=master)](https://github.com/tangerinous/java-project-61/actions/workflows/hexlet-check.yml)
