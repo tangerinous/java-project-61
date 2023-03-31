@@ -15,27 +15,18 @@ public class ProgressionGame {
     public static final int BOUND_LIMIT = 10;
     public static final int MAX_CORRECT_ANSWERS = 3;
 
-    public static void start(Scanner scanner, String name) {
-        Engine engine = new Engine(scanner, MAX_CORRECT_ANSWERS, name);
+    public static String[] generateQuestion() {
+        Random random = new Random();
+        int start = random.nextInt(BOUND_START);
+        int step = random.nextInt(BOUND_STEP);
+        int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
 
-        out.println("What number is missing in the progression?");
-        while (engine.shouldContinue()) {
+        int[] arr = generateProgression(start, step, length);
+        int hideElemPos = new Random().nextInt(arr.length);
+        String maskedProgression = maskProgression(arr, hideElemPos);
 
-            Random random = new Random();
-            int start = random.nextInt(BOUND_START);
-            int step = random.nextInt(BOUND_STEP);
-            int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
-
-            int[] arr = generateProgression(start, step, length);
-            int hideElemPos = new Random().nextInt(arr.length);
-            String maskedProgression = maskProgression(arr, hideElemPos);
-
-            int correctAnswer = arr[hideElemPos];
-            String answer = engine.askQuestion(maskedProgression);
-
-            engine.checkAnswer(answer, String.valueOf(correctAnswer));
-        }
-        out.printf("Congratulations, %s!\n", name);
+        int correctAnswer = arr[hideElemPos];
+        return new String[]{maskedProgression, String.valueOf(correctAnswer)};
     }
 
     private static String maskProgression(int[] arr, int hideElemPos) {

@@ -30,9 +30,9 @@ public class EngineV2 {
                 correctAnswers++;
             } else {
                 out.printf("""
-                '%s' is wrong answer ;(. Correct answer was '%s'.
-                Let's try again, %s!
-                """, answer, question[1], name);
+                        '%s' is wrong answer ;(. Correct answer was '%s'.
+                        Let's try again, %s!
+                        """, answer, question[1], name);
                 correctAnswers = Integer.MAX_VALUE;
 
             }
@@ -52,8 +52,8 @@ public class EngineV2 {
             case "2" -> EvenGame.generateQuestion();
             case "3" -> CalcGame.generateQuestion();
             case "4" -> GcdGame.generateQuestion();
-//            case "5" -> 2ProgressionGame.generateQuestion();
-//            case "6" -> PrimeGame.generateQuestion();
+            case "5" -> ProgressionGame.generateQuestion();
+            case "6" -> PrimeGame.generateQuestion();
             default -> throw new RuntimeException("Unknown choice");
         };
     }
