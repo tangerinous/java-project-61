@@ -39,8 +39,8 @@ public class EngineV2 {
                 correctAnswers = Integer.MAX_VALUE;
 
             }
-
         }
+        out.printf("Congratulations, %s!\n", name);
     }
 
     private static String askQuestion(Scanner scanner, Object question) {
