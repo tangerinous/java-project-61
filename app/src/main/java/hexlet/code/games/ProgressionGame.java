@@ -21,7 +21,12 @@ public class ProgressionGame {
         out.println("What number is missing in the progression?");
         while (engine.shouldContinue()) {
 
-            int[] arr = generateProgression();
+            Random random = new Random();
+            int start = random.nextInt(BOUND_START);
+            int step = random.nextInt(BOUND_STEP);
+            int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
+
+            int[] arr = generateProgression(start, step, length);
             int hideElemPos = new Random().nextInt(arr.length);
             String maskedProgression = maskProgression(arr, hideElemPos);
 
@@ -41,12 +46,8 @@ public class ProgressionGame {
         return strB.toString();
     }
 
-    private static int[] generateProgression() {
-        Random random = new Random();
+    private static int[] generateProgression(int start, int step, int length) {
 
-        int start = random.nextInt(BOUND_START);
-        int step = random.nextInt(BOUND_STEP);
-        int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
         int[] arr = new int[length];
 
         for (int i = 0; i < arr.length; i++) {
