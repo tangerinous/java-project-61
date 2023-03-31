@@ -22,7 +22,7 @@ public class GcdGame {
         int max = Integer.max(left, right);
         int min = Integer.min(left, right);
 
-        if(min == 0){
+        if (min == 0) {
             return 1;
         }
 
