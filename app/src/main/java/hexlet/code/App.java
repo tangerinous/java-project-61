@@ -26,15 +26,7 @@ public class App {
 
             out.print("Your choice: ");
 
-            String choice = scanner.next();
-            if ("1".equals(choice)) {
-                Cli.greeting(scanner);
-                return;
-            }
-
-            String name = Cli.greeting(scanner);
-
-            Menu.processMenu(scanner, name, choice);
+            EngineV2.startGame(scanner);
 
             out.println("Goodbye");
         }

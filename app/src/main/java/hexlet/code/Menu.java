@@ -16,6 +16,5 @@ public class Menu {
             case "6" -> PrimeGame.start(scanner, name);
             default -> exit(1);
         }
-
     }
 }
