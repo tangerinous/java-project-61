@@ -41,7 +41,7 @@ public class CalcGame {
             case "+" -> left + right;
             case "-" -> left - right;
             case "*" -> left * right;
-            default -> ZERO;
+            default -> throw new RuntimeException("Unexpected operation");
         };
     }
 

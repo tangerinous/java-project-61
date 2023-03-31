@@ -20,28 +20,41 @@ public class ProgressionGame {
 
         out.println("What number is missing in the progression?");
         while (engine.shouldContinue()) {
-            Random random = new Random();
-            int start = random.nextInt(BOUND_START);
-            int step = random.nextInt(BOUND_STEP);
-            int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
-            int hideElemPos = random.nextInt(length);
-            int[] arr = new int[length];
 
-            int current = start;
-            StringBuilder strB = new StringBuilder();
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = current;
-                current += step;
-                strB.append(i != hideElemPos ? arr[i] : "..").append(" ");
-            }
+            int[] arr = generateProgression();
+            int hideElemPos = new Random().nextInt(arr.length);
+            String maskedProgression = maskProgression(arr, hideElemPos);
 
-            int correctAnswer = hideElemPos == 0 ? start : arr[hideElemPos - 1] + step;
-            String answer = engine.askQuestion(strB.toString());
+            int correctAnswer = arr[hideElemPos];
+            String answer = engine.askQuestion(maskedProgression);
 
             engine.checkAnswer(answer, String.valueOf(correctAnswer));
         }
         out.printf("Congratulations, %s!\n", name);
     }
 
+    private static String maskProgression(int[] arr, int hideElemPos) {
+        StringBuilder strB = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            strB.append(i != hideElemPos ? arr[i] : "..").append(" ");
+        }
+        return strB.toString();
+    }
+
+    private static int[] generateProgression() {
+        Random random = new Random();
+
+        int start = random.nextInt(BOUND_START);
+        int step = random.nextInt(BOUND_STEP);
+        int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
+        int[] arr = new int[length];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = start;
+            start += step;
+        }
+
+        return arr;
+    }
 
 }
