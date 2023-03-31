@@ -1,11 +1,6 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
 import java.util.Random;
-import java.util.Scanner;
-
-import static java.lang.System.out;
 
 public class ProgressionGame {
 
