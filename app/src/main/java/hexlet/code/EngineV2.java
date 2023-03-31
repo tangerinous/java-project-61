@@ -51,7 +51,7 @@ public class EngineV2 {
         return switch (choice) {
             case "2" -> EvenGame.generateQuestion();
             case "3" -> CalcGame.generateQuestion();
-//            case "4" -> GcdGame.generateQuestion();
+            case "4" -> GcdGame.generateQuestion();
 //            case "5" -> 2ProgressionGame.generateQuestion();
 //            case "6" -> PrimeGame.generateQuestion();
             default -> throw new RuntimeException("Unknown choice");
