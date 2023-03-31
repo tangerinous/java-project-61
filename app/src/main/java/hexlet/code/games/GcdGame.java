@@ -5,9 +5,9 @@ import java.util.Random;
 public class GcdGame {
 
     public static final int BOUND = 100;
-    public static final int MAX_CORRECT_ANSWERS = 3;
 
     public static String[] generateQuestion() {
+        System.out.println("Find the greatest common divisor of given numbers.");
         Random random = new Random();
 
         int left = random.nextInt(BOUND);

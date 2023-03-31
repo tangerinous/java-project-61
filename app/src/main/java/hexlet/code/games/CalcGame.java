@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
 import static java.lang.System.out;
 
@@ -9,10 +8,10 @@ public class CalcGame {
 
     public static final int BOUND = 100;
     public static final int ZERO = 0;
-    public static final int MAX_CORRECT_ANSWERS = 3;
     private static final String[] ops = {"+", "-", "*"};
 
     public static String[] generateQuestion() {
+        out.println("What is the result of the expression?");
         String[] questionAns = new String[2];
 
         Random random = new Random();

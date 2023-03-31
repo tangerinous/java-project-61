@@ -8,9 +8,9 @@ public class ProgressionGame {
     public static final int BOUND_STEP = 10;
     public static final int BOUND_ORIGIN = 5;
     public static final int BOUND_LIMIT = 10;
-    public static final int MAX_CORRECT_ANSWERS = 3;
 
     public static String[] generateQuestion() {
+        System.out.println("What number is missing in the progression?");
         Random random = new Random();
         int start = random.nextInt(BOUND_START);
         int step = random.nextInt(BOUND_STEP);
