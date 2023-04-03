@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.EngineV3;
+
 import java.util.Random;
 
 public class ProgressionGame {
@@ -9,19 +11,25 @@ public class ProgressionGame {
     public static final int BOUND_ORIGIN = 5;
     public static final int BOUND_LIMIT = 10;
 
-    public static String[] generateQuestion() {
-        System.out.println("What number is missing in the progression?");
+    public static void startGame() {
+        String rule = "What number is missing in the progression?";
+
         Random random = new Random();
-        int start = random.nextInt(BOUND_START);
-        int step = random.nextInt(BOUND_STEP);
-        int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
+        String[][] questions = new String[3][2];
 
-        int[] arr = generateProgression(start, step, length);
-        int hideElemPos = new Random().nextInt(arr.length);
-        String maskedProgression = maskProgression(arr, hideElemPos);
+        for (int i = 0; i < questions.length; i++) {
+            int start = random.nextInt(BOUND_START);
+            int step = random.nextInt(BOUND_STEP);
+            int length = random.nextInt(BOUND_ORIGIN, BOUND_LIMIT);
 
-        int correctAnswer = arr[hideElemPos];
-        return new String[]{maskedProgression, String.valueOf(correctAnswer)};
+            int[] arr = generateProgression(start, step, length);
+            int hideElemPos = new Random().nextInt(arr.length);
+            String maskedProgression = maskProgression(arr, hideElemPos);
+
+            int correctAnswer = arr[hideElemPos];
+            questions[i] = new String[]{maskedProgression, String.valueOf(correctAnswer)};
+        }
+        EngineV3.play(rule, questions);
     }
 
     private static String maskProgression(int[] arr, int hideElemPos) {

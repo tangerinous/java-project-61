@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.*;
+
 import java.util.Scanner;
 
 import static java.lang.System.out;
@@ -19,8 +21,20 @@ public class App {
 
             out.print("Your choice: ");
 
-            EngineV2.startGame(scanner);
+            String choice = scanner.next();
+            if ("1".equals(choice)) {
+                Cli.greeting(scanner);
+                return;
+            }
 
+            switch (choice) {
+                case "2" -> EvenGame.startGame();
+                case "3" -> CalcGame.startGame();
+                case "4" -> GcdGame.startGame();
+                case "5" -> ProgressionGame.startGame();
+                case "6" -> PrimeGame.startGame();
+                default -> throw new RuntimeException("Unknown choice");
+            }
             out.println("Goodbye");
         }
     }

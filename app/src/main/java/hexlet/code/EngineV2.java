@@ -54,13 +54,14 @@ public class EngineV2 {
 
 
     private static String[] generateQuestion(String choice) {
-        return switch (choice) {
-            case "2" -> EvenGame.generateQuestion();
-            case "3" -> CalcGame.generateQuestion();
-            case "4" -> GcdGame.generateQuestion();
-            case "5" -> ProgressionGame.generateQuestion();
-            case "6" -> PrimeGame.generateQuestion();
-            default -> throw new RuntimeException("Unknown choice");
-        };
+//        return switch (choice) {
+//            case "2" -> EvenGame.startGame();
+//            case "3" -> CalcGame.generateQuestion();
+//            case "4" -> GcdGame.generateQuestion();
+//            case "5" -> ProgressionGame.generateQuestion();
+//            case "6" -> PrimeGame.generateQuestion();
+//            default -> throw new RuntimeException("Unknown choice");
+//        };
+        return null;
     }
 }
