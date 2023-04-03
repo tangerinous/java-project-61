@@ -5,15 +5,16 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class Cli {
-    public static String greeting(Scanner scanner) {
-        out.println("Welcome to the Brain Games!");
+    public static void greeting() {
+        try (Scanner scanner = new Scanner(System.in)) {
+            out.println("Welcome to the Brain Games!");
 
-        out.println("May I have your name? ");
+            out.println("May I have your name? ");
 
-        String name = scanner.next();
+            String name = scanner.next();
 
-        out.println("Hello, " + name + "!");
-        return name;
+            out.println("Hello, " + name + "!");
+        }
     }
 
 }
