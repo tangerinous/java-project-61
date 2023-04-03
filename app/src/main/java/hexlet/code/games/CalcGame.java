@@ -8,11 +8,12 @@ public class CalcGame {
 
     public static final int BOUND = 100;
     private static final String[] OPS = {"+", "-", "*"};
+    public static final int QUESTIONS_SIZE = 3;
 
     public static void startGame() {
         String rule = "What is the result of the expression?";
 
-        String[][] questions = new String[3][2];
+        String[][] questions = new String[QUESTIONS_SIZE][2];
 
         Random random = new Random();
         for (int i = 0; i < questions.length; i++) {

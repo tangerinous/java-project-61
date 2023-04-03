@@ -10,12 +10,13 @@ public class ProgressionGame {
     public static final int BOUND_STEP = 10;
     public static final int BOUND_ORIGIN = 5;
     public static final int BOUND_LIMIT = 10;
+    public static final int QUESTIONS_SIZE = 3;
 
     public static void startGame() {
         String rule = "What number is missing in the progression?";
 
         Random random = new Random();
-        String[][] questions = new String[3][2];
+        String[][] questions = new String[QUESTIONS_SIZE][2];
 
         for (int i = 0; i < questions.length; i++) {
             int start = random.nextInt(BOUND_START);

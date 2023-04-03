@@ -7,12 +7,13 @@ import java.util.Random;
 public class GcdGame {
 
     public static final int BOUND = 100;
+    public static final int QUESTIONS_SIZE = 3;
 
     public static void startGame() {
         String rule = "Find the greatest common divisor of given numbers.";
 
         Random random = new Random();
-        String[][] questions = new String[3][2];
+        String[][] questions = new String[QUESTIONS_SIZE][2];
         for (int i = 0; i < questions.length; i++) {
 
             int left = random.nextInt(BOUND);
