@@ -7,23 +7,22 @@ import java.util.Random;
 public class PrimeGame {
 
     public static final int BOUND = 100;
-    public static final int QUESTIONS_SIZE = 3;
 
     public static void startGame() {
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         Random random = new Random();
-        String[][] questions = new String[QUESTIONS_SIZE][2];
+        String[][] questionsAndAnswers = new String[EngineV3.QUESTIONS_SIZE][2];
 
-        for (int i = 0; i < questions.length; i++) {
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
             int num = random.nextInt(BOUND);
 
             boolean correctAnswer = isPrime(num);
 
-            questions[i] = new String[]{String.valueOf(num), correctAnswer ? "yes" : "no"};
+            questionsAndAnswers[i] = new String[]{String.valueOf(num), correctAnswer ? "yes" : "no"};
         }
 
-        EngineV3.play(rule, questions);
+        EngineV3.play(rule, questionsAndAnswers);
     }
 
     private static boolean isPrime(int num) {

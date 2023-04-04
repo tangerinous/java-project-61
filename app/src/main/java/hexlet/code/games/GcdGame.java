@@ -7,44 +7,34 @@ import java.util.Random;
 public class GcdGame {
 
     public static final int BOUND = 100;
-    public static final int QUESTIONS_SIZE = 3;
 
     public static void startGame() {
         String rule = "Find the greatest common divisor of given numbers.";
 
         Random random = new Random();
-        String[][] questions = new String[QUESTIONS_SIZE][2];
-        for (int i = 0; i < questions.length; i++) {
+        String[][] questionsAndAnswers = new String[EngineV3.QUESTIONS_SIZE][2];
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
 
             int left = random.nextInt(BOUND);
             int right = random.nextInt(BOUND);
 
             String question = String.format("%d %d", left, right);
             int correctAnswer = calcNod(left, right);
-            questions[i] = new String[]{question, String.valueOf(correctAnswer)};
+            questionsAndAnswers[i] = new String[]{question, String.valueOf(correctAnswer)};
         }
 
-        EngineV3.play(rule, questions);
+        EngineV3.play(rule, questionsAndAnswers);
     }
 
     private static int calcNod(int left, int right) {
-        int max = Integer.max(left, right);
-        int min = Integer.min(left, right);
-
-        if (min == 0) {
-            return 1;
-        }
-
-        while (min > 1) {
-            int mod = max % min;
-            if (mod == 0) {
-                return min;
+        while (left != 0 && right != 0) {
+            if (left > right) {
+                left = left % right;
             } else {
-                max = min;
-                min = mod;
+                right = right % left;
             }
         }
-        return 1;
+        return left + right;
     }
 
 

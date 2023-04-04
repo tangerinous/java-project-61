@@ -7,7 +7,9 @@ import static java.lang.System.out;
 
 public class EngineV3 {
 
-    public static void play(String rules, String[][] questions) {
+    public static final int QUESTIONS_SIZE = 3;
+
+    public static void play(String rules, String[][] questionsAndAnswers) {
         try (Scanner scanner = new Scanner(System.in)) {
 
             out.println("Welcome to the Brain Games!");
@@ -19,7 +21,7 @@ public class EngineV3 {
             out.println("Hello, " + name + "!");
 
             System.out.println(rules);
-            for (String[] question : questions) {
+            for (String[] question : questionsAndAnswers) {
 
                 out.println("Question: " + question[0]);
                 out.println("Your answer: ");
@@ -32,7 +34,7 @@ public class EngineV3 {
                             '%s' is wrong answer ;(. Correct answer was '%s'.
                             Let's try again, %s!
                             """, answer, question[1], name);
-                    break;
+                    return;
                 }
             }
             out.printf("Congratulations, %s!\n", name);

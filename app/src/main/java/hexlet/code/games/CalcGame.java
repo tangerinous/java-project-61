@@ -8,15 +8,14 @@ public class CalcGame {
 
     public static final int BOUND = 100;
     private static final String[] OPS = {"+", "-", "*"};
-    public static final int QUESTIONS_SIZE = 3;
 
     public static void startGame() {
         String rule = "What is the result of the expression?";
 
-        String[][] questions = new String[QUESTIONS_SIZE][2];
+        String[][] questionsAndAnswers = new String[EngineV3.QUESTIONS_SIZE][2];
 
         Random random = new Random();
-        for (int i = 0; i < questions.length; i++) {
+        for (int i = 0; i < questionsAndAnswers.length; i++) {
             int operation = random.nextInt(OPS.length);
             String[] questionAns = new String[2];
 
@@ -29,10 +28,10 @@ public class CalcGame {
 
             questionAns[0] = question;
             questionAns[1] = String.valueOf(correctAnswer);
-            questions[i] = questionAns;
+            questionsAndAnswers[i] = questionAns;
         }
 
-        EngineV3.play(rule, questions);
+        EngineV3.play(rule, questionsAndAnswers);
     }
 
     private static int calculate(int left, String operation, int right) {
